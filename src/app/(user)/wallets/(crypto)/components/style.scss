@@ -1,0 +1,94 @@
+@import "../../../../_ui/theme/_var.scss";
+
+.buy-modal {
+  &__bal {
+    margin-bottom: 0.5rem;
+
+    span {
+      font-weight: 600;
+    }
+  }
+  .price-conv {
+    display: flex;
+    margin-inline: auto;
+    padding: 2rem 1.7rem;
+    border-radius: 1.5rem;
+    background-color: $clrF7F7F7;
+    margin-bottom: 1.6rem;
+
+    @media (max-width: 767px) {
+      padding: 2rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h5 {
+      font-weight: 400;
+      color: $clr999999;
+    }
+  }
+
+  .custom-button {
+    margin-top: 2rem;
+  }
+
+  .common-select-wrapper {
+    .common-select {
+      .react-select {
+        &__menu {
+          border: 1px solid $clrAFC5E5;
+          background-color: $white;
+          box-shadow: 0px 0px 16px 0px #ffffff1f;
+        }
+      }
+    }
+  }
+}
+
+.deposit-modal {
+  &__qr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1rem;
+    // padding: 1rem;
+    // background-color: rgba($primary, 0.5);
+    margin-bottom: 3rem;
+
+    @media (max-width: 767px) {
+      width: 16rem;
+      height: 16rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .rec-add {
+    > p {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    &__wrap {
+      padding: 1rem 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-radius: 0.6rem;
+      background-color: $primary2;
+
+      p {
+        font-size: 1.4rem;
+      }
+
+      button {
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+.deposit_note {
+  margin-top: 2rem;
+  // color: #0080d0;
+}

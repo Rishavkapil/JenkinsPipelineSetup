@@ -1,0 +1,42 @@
+@import "../../../_ui/theme/_var.scss";
+
+.main_title {
+  .title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 95px;
+    letter-spacing: 0em;
+    color: $white;
+    margin-bottom: 0;
+
+    @media (max-width: 1679px) {
+      font-size: 60px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1479px) {
+      font-size: 50px;
+    }
+
+    @media (max-width: 1399px) {
+      font-size: 44px;
+    }
+
+    @media (max-width: 1199px) {
+      font-size: 32px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+    @media (max-width: 575px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+}

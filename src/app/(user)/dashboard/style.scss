@@ -1,0 +1,393 @@
+@import "../../_ui/theme/_var.scss";
+
+.dashboard {
+  &__investment {
+    border-radius: 2rem;
+    background-color: $white;
+    margin-bottom: 4rem;
+    box-shadow: -7px 15px 45.7px 0px #0000000a;
+
+    @media (max-width: 1679px) {
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 1199px) {
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 767px) {
+      border-radius: 0.8rem;
+    }
+
+    &__left {
+      border-radius: 2rem 0 0 2rem;
+      background-color: $primary;
+      padding: 4rem 4rem 3.5rem;
+      height: 100%;
+
+      @media (max-width: 1679px) {
+        padding: 3rem 4rem 2rem;
+      }
+
+      @media (max-width: 1199px) {
+        padding: 2rem 3.5rem;
+      }
+
+      @media (max-width: 767px) {
+        padding: 2rem 1.5rem;
+      }
+
+      @media (max-width: 767px) {
+        border-radius: 0.8rem 0.8rem 0 0;
+      }
+
+      >h3 {
+        line-height: 1;
+        margin-bottom: 1rem;
+        color: $white;
+      }
+
+      >p {
+        color: $white;
+        margin-bottom: 0.5rem;
+      }
+
+      .p2 {
+        margin-top: 0.2rem;
+      }
+    }
+
+    &__right {
+      .bal-title {
+        padding: 3rem 4rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+        border-bottom: 0.1rem solid #2e2c43;
+
+        @media (max-width: 1679px) {
+          padding: 3rem 4rem 2.5rem;
+        }
+
+        @media (max-width: 1199px) {
+          padding: 2rem 3.5rem;
+        }
+
+        @media (max-width: 767px) {
+          padding: 2rem 1.5rem;
+          font-size: 1.6rem;
+        }
+
+        span {
+          color: $primary;
+        }
+      }
+
+      .contract-wrap {
+        padding: 3rem 4rem;
+
+        @media (max-width: 1679px) {
+          padding: 2.5rem 4rem;
+        }
+
+        @media (max-width: 1199px) {
+          padding: 2rem 3.5rem;
+        }
+
+        @media (max-width: 767px) {
+          padding: 2rem 1.5rem;
+        }
+
+        h3 {
+          font-weight: 600;
+          margin-bottom: 1.6rem;
+
+          @media (max-width: 575px) {
+            font-size: 1.6rem;
+          }
+
+        }
+        .contract_info_icon {
+          margin-left: 5px;
+          cursor: pointer;
+      
+          @media (max-width: 767px) {
+            svg {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+        }
+
+        .custom-button {
+          min-width: 25.4rem;
+
+          @media (max-width: 575px) {
+            min-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.info-wrap {
+  cursor: pointer;
+  display: flex;
+  gap: 3rem;
+
+  @media (max-width: 1679px) {
+    gap: 2.5rem;
+  }
+
+  @media (max-width: 1479px) {
+    gap: 2rem;
+  }
+
+  @media (max-width: 575px) {
+    gap: 1rem;
+  }
+}
+
+.navigateToPage {
+  cursor: pointer;
+}
+
+.input-wrap {
+  height: 5.6rem;
+  background-color: $primary2;
+  padding: 1rem 1.6rem;
+  margin-bottom: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+
+  @media (max-width: 767px) {
+    height: 4.8rem;
+    margin-bottom: 2rem;
+  }
+
+  input {
+    border: 0;
+    background-color: transparent;
+    flex: 1;
+    color: $white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.04px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  button {
+    flex-shrink: 0;
+
+    svg path {
+      transition: all linear 0.2s;
+    }
+
+    &:hover {
+      svg path {
+        stroke: $primary;
+      }
+    }
+  }
+}
+
+.copy_address_input {
+  &.input-wrap {
+    background-color: $white;
+    border: 1px solid $clrAFC5E5;
+    border-radius: 10rem;
+    padding-right: 2.8rem;
+
+    @media (max-width: 767px) {
+      padding-right: 2rem;
+    }
+
+    input {
+      color: $clr999999;
+    }
+  }
+
+  P {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: $clr999999;
+
+    @media (max-width: 767px) {
+      font-size: 1.4rem;
+    }
+  }
+
+  .import_token {
+    min-width: auto;
+    min-width: auto;
+    margin-right: -28px;
+    left: 0;
+    margin-left: 10px;
+    min-height: 5.4rem;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+.withdraw-sec {
+  margin-bottom: 4rem;
+
+  @media (max-width: 1679px) {
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 1199px) {
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 767px) {
+    border-radius: 0.8rem;
+  }
+
+  >h3 {
+    margin-bottom: 3rem;
+    line-height: 0.8;
+
+    @media (max-width: 1679px) {
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 1199px) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  >h5 {
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    line-height: 0.8;
+  }
+
+  >p {
+    color: rgba(#333333, 0.6);
+    line-height: 3rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 1679px) {
+      line-height: 140%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .row {
+    margin: 0 -2rem;
+
+    @media (max-width: 1479px) {
+      margin: 0 -1.5rem;
+    }
+
+    @media (max-width: 767px) {
+      row-gap: 2rem;
+    }
+
+    >div {
+      padding: 0 2rem;
+
+      @media (max-width: 1479px) {
+        padding: 0 1.5rem;
+      }
+    }
+  }
+
+  .withdraw-card {
+    background-color: $clrF7F7F7;
+    padding: 3rem;
+    border-radius: 0.8rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (max-width: 1199px) {
+      padding: 2rem;
+    }
+
+    h3 {
+      margin-bottom: 2.6rem;
+      line-height: 3.2rem;
+      font-weight: 600;
+
+      @media (max-width: 1679px) {
+        line-height: 2.8rem;
+      }
+
+      @media (max-width: 1199px) {
+        line-height: 140%;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .custom-button {
+      margin-top: auto;
+      padding-left: 4.2rem;
+      padding-right: 4.2rem;
+
+      @media (max-width: 1199px) {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+
+      @media (max-width: 767px) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: 100%;
+      }
+    }
+
+    .withdraw_btn {
+      max-width: 25.4rem;
+      width: 100%;
+    }
+  }
+
+  .input-wrap {
+    margin-bottom: 0;
+  }
+}
+
+.next-phase {
+  text-align: center;
+
+  &.common-bg {
+    padding: 3rem 2rem;
+
+    @media (max-width: 767px) {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  h2 {
+    color: $primary;
+  }
+}
+
+.pending {
+  color: $yellowdark !important;
+}
+
+.reject {
+  color: $red !important;
+}

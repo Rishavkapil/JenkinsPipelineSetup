@@ -1,0 +1,60 @@
+/** @format */
+
+@import "../../_ui/theme/_var.scss";
+
+.auth-setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background-color: $clrF7F7F7;
+  border-radius: 3rem;
+  padding: 2rem 3rem;
+
+  @media (max-width: 991px) {
+    padding: 1.5rem 1.2rem;
+    border-radius: 2rem;
+
+    .btn-style {
+      min-width: 12rem;
+      padding: 0.8rem 1.5rem;
+    }
+  }
+
+  h3 {
+    margin-bottom: 0;
+
+    @media (max-width: 575px) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.user-profile {
+  &__form {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+
+    .custom-button {
+      min-width: 18rem;
+    }
+
+    .preview-img {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.reject {
+  font-weight: 520;
+  color: #ff0002;
+}
+
+.change_password {
+  &_inputs {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,10 @@
+@import "../../../_ui/theme/_var.scss";
+
+.contact_sec {
+  position: relative;
+
+  .icontact_sec_inner {
+    display: flex;
+    justify-content: center;
+  }
+}

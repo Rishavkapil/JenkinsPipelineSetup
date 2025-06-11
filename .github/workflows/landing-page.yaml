@@ -1,0 +1,202 @@
+# name: Github Actions CI/CD for OzolioToken Landing Page
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   deploy:
+#     name: Deploy to Docker Server
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Run Trivy file system scan
+#         uses: aquasecurity/trivy-action@master
+#         with:
+#           scan-type: 'fs'
+#           scan-ref: '.'
+#           format: 'table'
+#           exit-code: 1
+
+#       - name: Configure AWS CLI
+#         run: |
+#           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
+#           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_KEY }}
+#           aws configure set default.region ${{ secrets.AWS_REGION }}
+
+#       - name: Get Runner IP
+#         id: runner_ip
+#         run: echo "RUNNER_IP=$(curl -s ifconfig.me)" >> $GITHUB_ENV
+
+#       - name: Login to Amazon ECR
+#         run: |
+#           aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+#           aws ec2 authorize-security-group-ingress --group-id ${{ secrets.AWS_SECURITY_GROUP }} --ip-permissions "IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges=[{CidrIp=${{ env.RUNNER_IP }}/32,Description=\"Allowing Github Actions IP\"}]"
+      
+#       - name: Get env from secret manager
+#         run: |
+#           aws secretsmanager get-secret-value --secret-id prod-frontend-user-sm --query SecretString --output text > .env
+          
+#       - name: Docker Build
+#         run: |
+#           docker build -t prod-landing-page .
+
+#       # - name: Run Trivy image scan
+#       #   uses: aquasecurity/trivy-action@master
+#       #   with:
+#       #     scan-type: 'image'
+#       #     scan-ref: 'prod-landing-page:latest'
+#       #     format: 'table'
+#       #     exit-code: 1
+
+#       - name: Docker Tag
+#         run: |
+#           docker tag prod-landing-page:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/prod-landing-page:${{ github.run_id }}
+
+#       - name: Docker Push
+#         run: |
+#           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/prod-landing-page:${{ github.run_id }}
+
+#       - name: Decode .pem file
+#         run: |
+#           echo "${{ secrets.SSH_KEY }}" | tr -d '\r' > key.pem
+#           chmod 400 key.pem
+
+#       - name: SSH into EC2 instance
+#         run: |
+#           ssh -i key.pem -o "StrictHostKeyChecking no" ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/${{ secrets.SSH_USER }}/ozolio/frontend && \
+#           aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com && \
+#           export LANDING_PAGE=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/prod-landing-page:${{ github.run_id }} && \
+#           docker-compose up -d"
+
+#       - name: Revoke Security Group
+#         run: |
+#           aws ec2 revoke-security-group-ingress --group-id ${{ secrets.AWS_SECURITY_GROUP }} --ip-permissions "IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges=[{CidrIp=${{ env.RUNNER_IP }}/32,Description=\"Allowing Github Actions IP\"}]"
+
+
+name: Github Actions CI/CD for OzolioToken Landing Page
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Docker Server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Trivy file system scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'table'
+          exit-code: 1
+
+      - name: Configure AWS CLI
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_KEY }}
+          aws configure set default.region ${{ secrets.AWS_REGION }}
+
+      - name: Get Runner IP
+        id: runner_ip
+        run: echo "RUNNER_IP=$(curl -s ifconfig.me)" >> $GITHUB_ENV
+
+      - name: Login to Amazon ECR
+        run: |
+          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+          aws ec2 authorize-security-group-ingress --group-id ${{ secrets.AWS_SECURITY_GROUP }} --ip-permissions "IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges=[{CidrIp=${{ env.RUNNER_IP }}/32,Description=\"Allowing Github Actions IP\"}]"
+      
+      - name: Get env from secret manager
+        run: |
+          aws secretsmanager get-secret-value --secret-id prod-frontend-user-sm --query SecretString --output text > .env
+          
+      - name: Docker Build
+        run: |
+          docker build -t prod-landing-page .
+
+      - name: Docker Tag
+        run: |
+          docker tag prod-landing-page:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/prod-landing-page:${{ github.run_id }}
+
+      - name: Docker Push
+        run: |
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/prod-landing-page:${{ github.run_id }}
+
+      - name: Decode .pem file
+        run: |
+          echo "${{ secrets.SSH_KEY }}" | tr -d '\r' > key.pem
+          chmod 400 key.pem
+
+      - name: SSH into EC2 instance
+        run: |
+          ssh -i key.pem -o "StrictHostKeyChecking no" ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/${{ secrets.SSH_USER }}/ozolio/frontend && \
+          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com && \
+          export LANDING_PAGE=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/prod-landing-page:${{ github.run_id }} && \
+          docker-compose up -d"
+
+      - name: Revoke Security Group
+        run: |
+          aws ec2 revoke-security-group-ingress --group-id ${{ secrets.AWS_SECURITY_GROUP }} --ip-permissions "IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges=[{CidrIp=${{ env.RUNNER_IP }}/32,Description=\"Allowing Github Actions IP\"}]"
+
+  notify:
+    name: Notify Google Chat
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Notify Google Chat
+        uses: SimonScholz/google-chat-action@main
+        with:
+          webhookUrl: ${{ secrets.GOOGLE_CHAT_WEBHOOK_URL }}
+          jobStatus: ${{ needs.deploy.result }}
+          title: 🛎 CI/CD Deployment Notification
+          subtitle: OzolioToken Landing Page - Docker Deployment
+          imageUrl: https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/c9252893-4cfd-4cba-b1fb-17cae176f61c.png
+          imageType: SQUARE
+          imageAltText: CI/CD Status
+          createDefaultSection: false
+          collapsibleDefaultSection: false
+          uncollapsibleWidgetsCount: 3
+          additionalSections: >-
+            [{
+              "header": "Deployment Summary",
+              "collapsible": true,
+              "widgets": [
+                {
+                  "decoratedText": {
+                    "startIcon": { "knownIcon": "DESCRIPTION" },
+                    "text": "Workflow: `${{ github.workflow }}`"
+                  }
+                },
+                {
+                  "decoratedText": {
+                    "startIcon": { "knownIcon": "PERSON" },
+                    "text": "Triggered by: `${{ github.actor }}`"
+                  }
+                },
+                {
+                  "decoratedText": {
+                    "startIcon": { "knownIcon": "DEPLOY" },
+                    "text": "Branch: `${{ github.ref_name }}`"
+                  }
+                },
+                {
+                  "decoratedText": {
+                    "startIcon": { "knownIcon": "CHECK_CIRCLE" },
+                    "text": "Status: `${{ needs.deploy.result }}`"
+                  }
+                }
+              ]
+            }]
+          threadKey: ${{ github.run_id }}

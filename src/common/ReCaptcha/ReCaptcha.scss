@@ -1,0 +1,58 @@
+@import "../../app/_ui/theme/_var.scss";
+
+.capcha_btn {
+  margin-bottom: 2rem;
+  box-shadow: 0 0 4px 1px rgb(0 0 0 / 8%);
+  padding: 2rem;
+  border: 0.1rem solid $lightGray;
+  background: #f9f9f9;
+  border: 0;
+  border-radius: 0.2rem;
+  color: $black;
+  font-size: 1.4rem;
+  font-weight: 600;
+  height: 6rem;
+  width: 25rem;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 575px) {
+    height: 5rem;
+    width: 22rem;
+    font-size: 1.2rem;
+  }
+
+  .check-input {
+    border: 0.2rem solid rgb(61, 61, 61) !important;
+    border-radius: 0.6rem;
+    margin-right: 0.8rem;
+    margin-top: 0 !important;
+    width: 2rem;
+    height: 2rem;
+
+    @media (max-width: 575px) {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .capcha_img {
+    margin-left: 1.8rem;
+    img {
+      width: 3.5rem;
+      height: 3.5rem;
+
+      @media (max-width: 575px) {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+  }
+}
+
+.grecaptcha-badge {
+  visibility: hidden !important;
+}

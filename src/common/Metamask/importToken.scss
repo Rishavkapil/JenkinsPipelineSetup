@@ -1,0 +1,31 @@
+@import "../../app/_ui/theme/_var.scss";
+
+.import_token {
+  min-height: 5.4rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background: $primary;
+  border: 0;
+  text-transform: capitalize;
+  transition: all ease-in-out 0.3s;
+  min-width: 16.6rem;
+  position: relative;
+  color: $white;
+  // left: 28px;
+
+  @media (max-width: 1599px) {
+    min-height: 5rem;
+  }
+
+  @media (max-width: 1199px) {
+    padding: 0.8rem 2.5rem;
+    font-size: 1.4rem;
+    min-height: 4.6rem;
+  }
+}

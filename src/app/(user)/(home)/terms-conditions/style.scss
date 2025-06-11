@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: #0080d0;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header .logo h1 {
+  font-size: 3rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  //   font-size: 3rem;
+  color: #0080d0;
+  margin-bottom: 15px;
+}
+
+h3 {
+  //   font-size: 2.5rem;
+  color: #333;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  //   font-size: 2rem;
+  color: #555;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+p,
+ul,
+address {
+  //   font-size: 1.75rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+address {
+  font-style: normal;
+}
+
+footer {
+  background-color: #0080d0;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+  color: white;
+}
+
+/* Add some hover effect to links and text */
+a {
+  color: #0080d0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #005b99;
+  text-decoration: underline;
+}

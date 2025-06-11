@@ -1,0 +1,7 @@
+.contact_us_link {
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    color: blue;
+  }
+}

@@ -1,0 +1,40 @@
+@import "../../app/_ui/theme/_var.scss";
+
+.pagination-style {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+
+  .pagination {
+    display: flex;
+    gap: 1rem;
+
+    li {
+      a {
+        transition: all linear 0.25s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: $primary;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 0.6rem;
+        background-color: rgba($white, 0.05);
+        font-size: 1.4rem;
+        font-weight: 400;
+
+        &:hover {
+          background-color: rgba($white, 0.15);
+        }
+      }
+
+      &.active {
+        a {
+          color: $white;
+          background-color: $primary;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

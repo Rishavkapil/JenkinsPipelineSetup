@@ -1,0 +1,210 @@
+@import "../../app/_ui/theme/_var.scss";
+
+.common-select-wrapper {
+  margin-bottom: 1.6rem;
+
+  @media (max-width: 1679px) {
+    margin-bottom: 1.4rem;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 1rem;
+  }
+
+  .common-select {
+    .react-select {
+      &__control {
+        width: 100%;
+        padding: 0.8rem 1.6rem;
+        border: 1px solid $clrAFC5E5;
+        background: transparent;
+        outline: none;
+        font-size: 1.6rem;
+        list-style: none;
+        font-weight: 500;
+        color: $textdarkclr;
+        border-radius: 10rem;
+        letter-spacing: 0.02em;
+        transition: 200ms ease-in-out;
+        min-height: 5.6rem;
+
+        @media (max-width: 1679px) {
+          min-height: 5rem;
+          padding: 1.25rem 1.5rem;
+          font-size: 1.4rem;
+        }
+
+        &--is-disabled {
+          background-color: $clrAFC5E5;
+          border-color: $clrF7F7F7;
+        }
+
+        @media (max-width: 767px) {
+          min-width: 9rem;
+        }
+
+        &--is-focused {
+          box-shadow: none;
+        }
+
+        &:hover {
+          border-color: $clrAFC5E5;
+        }
+
+        &--menu-is-open {
+          .react-select__indicator {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      &__placeholder {
+        color: $textclr;
+      }
+
+      &__input-container,
+      &__single-value {
+        margin: 0;
+        color: $textdarkclr;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: capitalize;
+        margin-right: 0.6rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @media (max-width: 767px) {
+          font-size: 1.2rem;
+        }
+
+        &--is-disabled {
+          color: $black;
+        }
+      }
+
+      &__value-container,
+      &__indicator {
+        padding: 0;
+      }
+
+      &__indicator-separator {
+        display: none;
+      }
+
+      &__indicator {
+        // background-image: url("/assets/down_iconwhite.svg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        transition: all 0.3s ease;
+        // width: 1.5rem;
+        // height: 0.8rem;
+
+        // @media (max-width: 767px) {
+        //   width: 1.2rem;
+        //   height: 0.7rem;
+        // }
+
+        svg {
+          display: block;
+        }
+      }
+
+      &__menu {
+        z-index: 3;
+        border-radius: 1rem;
+        overflow: hidden;
+        border: 1px solid $clrAFC5E5;
+        background-color: $white;
+        margin-top: 0;
+        box-shadow: 0px 0px 16px 0px #0000001f;
+        overflow: hidden;
+
+        &-list {
+          padding: 0;
+        }
+
+        &-notice {
+          &--no-options {
+            color: $textdarkclr;
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      &__option {
+        white-space: nowrap;
+        padding: 0.8rem 1.6rem;
+        color: $textdarkclr;
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-transform: capitalize;
+
+        @media (max-width: 767px) {
+          padding: 0.5rem 1.3rem;
+          font-size: 1.2rem;
+        }
+
+        &--is-selected,
+        &:active {
+          background-color: $primary !important;
+          color: $white !important;
+        }
+
+        &--is-focused {
+          background-color: transparent;
+        }
+
+        &:hover {
+          background-color: transparent;
+          color: $primary;
+          cursor: pointer;
+        }
+
+        &--is-disabled {
+          opacity: 0.5;
+
+          &:hover,
+          &:active {
+            color: $black !important;
+          }
+        }
+      }
+    }
+  }
+
+  &.error {
+    .react-select {
+      &__control {
+        border-color: $red;
+        background: rgba($red, 0.05);
+      }
+
+      &__placeholder,
+      &__single-value {
+        color: $red;
+      }
+    }
+  }
+
+  &.input-filled {
+    .react-select {
+      &__control {
+        border-color: $primary;
+        background: rgba($primary, 0.07);
+
+        &--is-disabled {
+          background-color: $white;
+          border-color: $white;
+          color: $black;
+        }
+      }
+
+      // &__placeholder,
+      // &__single-value {
+      //   color: $primary;
+      // }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../../_ui/theme/_var.scss";
+
+.about_sec {
+  &_img {
+      img {
+         @media (max-width: 767px) {
+             max-width: 32.7rem;
+             margin: 0 auto;
+             display: table;
+             width: 100%;
+         }
+      }
+  }
+}

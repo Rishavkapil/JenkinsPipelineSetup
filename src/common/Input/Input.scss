@@ -1,0 +1,153 @@
+@import "../../app/_ui/theme/_var.scss";
+
+.input {
+  margin-bottom: 2rem;
+
+  @media (max-width: 1679px) {
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 1rem;
+  }
+
+  .inner {
+    position: relative;
+
+    .form-control,
+    textarea {
+      outline: none;
+      font-size: 1.6rem;
+      list-style: none;
+      font-weight: 400;
+      color: $black;
+      border-radius: 10rem;
+      transition: 200ms ease-in-out;
+      width: 100%;
+      padding: 0.65rem 1.7rem;
+      border: 1px solid $clrAFC5E5;
+      background: transparent;
+      letter-spacing: 0.02em;
+      min-height: 5.6rem;
+
+      @media (max-width: 1679px) {
+        min-height: 5rem;
+        padding: 0.45rem 1.5rem;
+        font-size: 1.4rem;
+      }
+
+      &:read-only {
+        cursor: not-allowed;
+        background-color: $readOnlyField;
+      }
+
+      &::placeholder {
+        color: $clr999999;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      &.right-padd {
+        padding-right: 6rem;
+
+        @media (max-width: 1679px) {
+          padding-right: 5rem;
+        }
+
+        @media (max-width: 1679px) {
+          padding-right: 4rem;
+        }
+      }
+    }
+
+    textarea {
+      border-radius: 2rem;
+      padding: 1.5rem 1.6rem;
+    }
+
+    .icon,
+    .right-content {
+      position: absolute;
+      right: 1.6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 1;
+
+      @media (max-width: 767px) {
+        right: 1rem;
+      }
+    }
+
+    .right-content {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: $white;
+
+      @media (max-width: 767px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.error_message {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+  color: #ff0002;
+  font-weight: 400;
+}
+
+.form-control,
+textarea {
+  outline: none;
+  font-size: 1.6rem;
+  list-style: none;
+  font-weight: 400;
+  color: $black;
+  border-radius: 10rem;
+  transition: 200ms ease-in-out;
+  width: 100%;
+  padding: 0.65rem 1.7rem;
+  border: 1px solid $clrAFC5E5;
+  background: transparent;
+  letter-spacing: 0.02em;
+  min-height: 5.6rem;
+
+  @media (max-width: 1679px) {
+    min-height: 5rem;
+    padding: 0.45rem 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  &:read-only {
+    cursor: not-allowed;
+    background-color: $readOnlyField;
+  }
+
+  &::placeholder {
+    color: $clr999999;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &.right-padd {
+    padding-right: 6rem;
+
+    @media (max-width: 1679px) {
+      padding-right: 5rem;
+    }
+
+    @media (max-width: 1679px) {
+      padding-right: 4rem;
+    }
+  }
+}
+
+body textarea {
+  border-radius: 2rem;
+}

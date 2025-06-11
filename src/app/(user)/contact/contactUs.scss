@@ -1,0 +1,137 @@
+@import "../../_ui/theme/_var.scss";
+
+.contact_us {
+  .common-bg {
+    padding: 9rem 5rem;
+
+    @media (max-width: 1679px) {
+      padding: 8rem 3rem;
+    }
+
+    @media (max-width: 1199px) {
+      padding: 7rem 2.5rem;
+    }
+
+    @media (max-width: 767px) {
+      padding: 4rem 1.5rem;
+    }
+  }
+
+  &_inner {
+    max-width: 52rem;
+    margin: 0 auto;
+    width: 100%;
+
+    .input .inner .form-control {
+      padding-right: 10rem;
+    }
+  }
+
+  &_getIn {
+    max-width: 38.5rem;
+
+    h2 {
+      font-size: 5rem;
+      font-weight: 500;
+      margin: 2rem 0;
+
+      @media (max-width: 991px) {
+        font-size: 4rem;
+        line-height: 5.6rem;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 3rem;
+        line-height: 4.6rem;
+      }
+    }
+
+    h4 {
+      color: rgba($textdarkclr, 0.5);
+    }
+  }
+
+  &_stay {
+    margin-top: 3.5rem;
+
+    p {
+      font-size: 1.4rem;
+      color: $greytext2;
+      margin: 10px 0 2rem;
+    }
+
+    &_inputletter {
+      position: relative;
+      width: 100%;
+      max-width: 611px;
+
+      @media (max-width: 991px) {
+        max-width: 100%;
+      }
+
+      input {
+        width: 100%;
+        border-radius: 31px;
+        height: 62px;
+        padding: 8px 30px;
+        box-shadow: none;
+        border-color: $clrAFC5E5;
+
+        @media (max-width: 991px) {
+          padding: 8px 20px;
+          height: 4.6rem;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        min-width: 106px;
+        position: absolute;
+        top: 31px;
+        transform: translateY(-50%);
+        right: 4px;
+        min-height: 54px;
+        padding: 6px 11px 6px;
+        font-size: 1.6rem;
+
+        @media (max-width: 991px) {
+          min-height: 4rem;
+          min-width: 87px;
+          font-size: 1.4rem;
+          padding: 4px 10px;
+          right: 6px;
+          top: 25px;
+        }
+
+        @media (max-width: 575px) {
+          max-width: max-content;
+        }
+
+        &.right_icon_btn {
+          .rightIcon {
+            left: 2rem;
+            width: 37px;
+            height: 37px;
+
+            @media (max-width: 991px) {
+              width: 24px;
+              height: 24px;
+              left: 1rem;
+
+              svg {
+                width: 13px;
+              }
+            }
+
+            svg path {
+              fill: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "coin": "usd",
+    "address": "",
+    "balance": 0,
+    "locked_balance": 0,
+    "is_crypto": 0,
+    "icon_url": "",
+    "full_name": "USD"
+  },
+  {
+    "coin": "eur",
+    "address": "",
+    "balance": 0,
+    "locked_balance": 0,
+    "is_crypto": 0,
+    "icon_url": "",
+    "full_name": "EUR"
+  },
+  {
+    "coin": "gbp",
+    "address": "",
+    "balance": 0,
+    "locked_balance": 0,
+    "is_crypto": 0,
+    "icon_url": "",
+    "full_name": "GBP"
+  }
+]

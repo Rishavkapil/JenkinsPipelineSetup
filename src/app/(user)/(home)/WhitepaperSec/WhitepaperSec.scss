@@ -1,0 +1,16 @@
+@import "../../../_ui/theme/_var.scss";
+
+.whitepaper_sec {
+    background-color: #F7F7F7;
+    
+        &_img {
+            img {
+               @media (max-width: 767px) {
+                   max-width: 32.7rem;
+                   margin: 0 auto;
+                   display: table;
+                   width: 100%;
+               }
+            }
+        }
+}

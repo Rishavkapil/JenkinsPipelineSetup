@@ -1,0 +1,80 @@
+@import "../../../_ui/theme/_var.scss";
+
+.info-card {
+  border-radius: 0.8rem;
+  padding: 2rem;
+  background-color: $white;
+  text-align: center;
+  min-width: 24.5rem;
+
+  :hover {
+    cursor: pointer;
+  }
+  @media (max-width: 1479px) {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__icon {
+    width: 8rem;
+    height: 8rem;
+    background-color: $clrD9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10rem;
+    margin: 0 auto 2rem;
+
+    @media (max-width: 1479px) {
+      width: 6rem;
+      height: 6rem;
+      margin-bottom: 1.5rem;
+
+      svg {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    @media (max-width: 575px) {
+      width: 5.2rem;
+      height: 5.2rem;
+      margin-bottom: 0.75rem;
+
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  h3 {
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+
+    @media (max-width: 1479px) {
+      line-height: 2rem;
+    }
+  }
+
+  p {
+    color: $textdarkclr;
+    // color: white
+    span {
+      color: $green;
+      font-weight: 500;
+
+      &.reject {
+        color: $orange !important;
+      }
+      &.APPROVED {
+        color: $green !important;
+      }
+    }
+  }
+}

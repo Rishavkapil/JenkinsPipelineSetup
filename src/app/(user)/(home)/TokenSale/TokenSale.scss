@@ -1,0 +1,165 @@
+@import "../../../_ui/theme/_var.scss";
+
+.token_sale {
+  background-color: $primary;
+  padding: 3.5rem 0;
+  min-height: 13rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .info_text {
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 7px;
+  }
+
+  @media (max-width: 991px) {
+    padding: 3rem 0;
+  }
+
+  @media (max-width: 767px) {
+    padding: 2.2rem 0;
+  }
+
+  &_content {
+    h2 {
+      color: $white;
+      font-size: 3.5rem;
+      font-weight: 700;
+
+      @media (max-width: 1199px) {
+        font-size: 2.5rem;
+      }
+
+      @media (max-width: 991px) {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &_timer {
+    padding-left: 6.8rem;
+
+    @media (max-width: 991px) {
+      padding-left: 0;
+    }
+
+    ul {
+      display: flex;
+
+      @media (max-width: 991px) {
+        justify-content: space-between;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .timer_inner {
+        text-align: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 991px) {
+          display: block;
+          text-align: center;
+        }
+
+        li {
+          font-size: 3rem;
+          line-height: 3.7rem;
+          font-weight: 700;
+          padding: 1rem;
+          color: $white;
+          list-style: none;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+          border-radius: 1.2rem;
+          margin-right: 1.2rem;
+          width: 7.6rem;
+          height: 7.6rem;
+          border: 0;
+
+          @media (max-width: 1679px) {
+            font-size: 2.4rem;
+          }
+
+          @media (max-width: 1199px) {
+            width: 6rem;
+            height: 6rem;
+            font-size: 2.2rem;
+          }
+
+          @media (max-width: 991px) {
+            margin-right: 0;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+          }
+
+          @media (max-width: 767px) {
+            font-size: 1.6rem;
+            width: 4rem;
+            height: 4rem;
+            padding: 0.5rem 1rem;
+            // border-width: 1px;
+          }
+
+          &:last-child {
+            &::before {
+              display: none;
+            }
+          }
+        }
+
+        span {
+          font-size: 1.8rem;
+          font-weight: 500;
+          line-height: 2.3rem;
+          color: rgba(255, 255, 255, 0.8);
+          margin-right: 5.4rem;
+
+          @media (max-width: 1365px) {
+            margin-right: 2rem;
+          }
+
+          @media (max-width: 991px) {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            margin-right: 0rem;
+          }
+        }
+
+        &:last-child {
+          &::before {
+            content: none;
+          }
+
+          span {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .phase_info_icon {
+    position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+    cursor: pointer;
+
+    @media (max-width: 767px) {
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+}

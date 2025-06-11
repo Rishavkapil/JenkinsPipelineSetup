@@ -1,0 +1,90 @@
+@import "../../app/_ui/theme/_var.scss";
+
+.modal-backdrop.show {
+  background: $black !important;
+  opacity: 0.64 !important;
+}
+
+.custom-modal {
+  backdrop-filter: blur(5px);
+
+  .modal-dialog {
+    padding: 0 1rem;
+    max-width: 50rem;
+
+    @media (max-width: 767px) {
+      max-width: 45rem;
+      margin: 0 auto;
+    }
+  }
+
+  .modal-content {
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 16px 0px #00000024;
+    background: $white;
+    padding: 7rem 3rem 5rem;
+    min-height: 22rem;
+
+    @media (max-width: 767px) {
+      padding: 3.5rem 1.6rem 2rem;
+    }
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+
+  &__action {
+    position: absolute;
+    top: 2rem;
+    right: 2.1rem;
+    line-height: 1;
+
+    @media (max-width: 767px) {
+      top: 1rem;
+      right: 1.5rem;
+    }
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+
+      @media (max-width: 767px) {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+  }
+
+  &__header {
+    transition: all ease-in-out 200ms;
+    padding-bottom: 2rem;
+
+    @media (max-width: 767px) {
+      padding-bottom: 1.6rem;
+    }
+
+    h2 {
+      font-weight: 500;
+      color: $textdarkclr;
+      font-size: 2.4rem;
+      font-weight: 600;
+
+      @media (max-width:1399px) {
+        font-size: 2.2rem;
+      }
+
+      @media (max-width:767px) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__subTitle {
+    font-size: 1.6rem;
+    color: $textdarkclr;
+    opacity: 0.6;
+    font-weight: 400;
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,102 @@
+@import "../../../_ui/theme/_var.scss";
+
+.login_sidebar {
+  .logo {
+    cursor: pointer;
+  }
+  h1 {
+    font-size: 5rem;
+    font-weight: 300;
+    max-width: 60rem;
+    margin: 2.9rem auto 2rem;
+    line-height: 6.5rem;
+
+    @media (max-width: 1199px) {
+      font-size: 4rem;
+      line-height: 5.5rem;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 3rem;
+      line-height: 4.5rem;
+    }
+
+    strong {
+      font-weight: 500;
+    }
+  }
+  // img {
+  //   cursor: pointer;
+  // }
+  &_animate {
+    position: relative;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+
+  &_animationImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .live_stream {
+      position: absolute;
+      left: 0;
+      top: 3rem;
+      animation: alternate upanimate 4s infinite;
+
+      @media (max-width: 767px) {
+        top: 4.5rem;
+      }
+    }
+
+    .repost_img {
+      position: absolute;
+      right: 0rem;
+      bottom: 2.5rem;
+      animation: alternate downanimate 4s infinite;
+
+      @media (max-width: 767px) {
+        bottom: 4rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      max-width: 300px;
+
+      img {
+        max-width: 13rem;
+      }
+    }
+  }
+}
+
+@keyframes upanimate {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    translate: translateY(30px);
+  }
+}
+
+@keyframes downanimate {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    translate: translateY(-30px);
+  }
+}

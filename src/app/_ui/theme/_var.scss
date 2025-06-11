@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$baseFont: "Prompt", sans-serif;
+$montserratfont: "Montserrat", sans-serif;
+
+$white: #ffffff;
+$black: #000000;
+$baseclr: #0080d0;
+$primary: #0080d0;
+$primary2: #1c342d;
+$Grey: #ededed;
+$lightGray: #c3c3c3;
+$lightGray2: #6c757c;
+$Grey: #ededed;
+$textclr: #40596b;
+$textdarkclr: #333333;
+$greydarktext: #40596b;
+$readOnlyField: #d8d8d6;
+
+$secondary: #2a564b;
+$secondary2: #174e40;
+$secondary3: #1d1e2c;
+$red: #db2c3d;
+
+$secondary4: #727272;
+$secondary5: #292c2e;
+$secondarybg: #141924;
+$secondarybg2: #1e2738;
+$secondarybg3: #202535;
+$secondarybg4: #172545;
+
+$borderClr: #262626;
+$borderClr2: #252525;
+$borderClr3: #28343e;
+$green: #06d89b;
+$green2: #0080d0;
+$blue: #2797d1;
+$bluedark: #2770e9;
+$bluelight: #30a9ff;
+$orange: #c65102;
+$skyblue: #01cde4;
+$yellowclr: #f7a62f;
+$yellowdark: #fbbb10;
+$yellowdark2: #ffa133;
+$reddark: #e54c40;
+$reddark2: #f16263;
+
+$btnGradient: linear-gradient(90.71deg, #6f86de -2.07%, #4b67d1 100%);
+$gradient: linear-gradient(
+  131.15deg,
+  #e3e9f8 2.01%,
+  rgba(255, 255, 255, 0) 98.5%
+);
+$gradientbg: linear-gradient(116.34deg, #141515 -52.34%, #2a3046 94.28%);
+$gradientcard: linear-gradient(106.71deg, #141515 13.57%, #2a3046 96.01%);
+
+$boxShadow:
+  0 1.2rem 1.6rem -0.4rem rgba(255, 255, 255, 0.2),
+  0 0.4rem 0.6rem -0.2rem rgba(255, 255, 255, 0.15);
+$boxShadow2: 0 1rem 1.4rem rgba(255, 255, 255, 0.06);
+$boxShadow3:
+  inset 3px 17px 37px rgba(3, 3, 3, 0.6),
+  inset 0px 0px 5px rgba(255, 255, 255, 0.1);
+
+$borderRadius: 1rem;
+
+// landing page
+
+$footertext: #8389a2;
+$greytext2: #6a6969;
+$greenbg: #009169;
+$btnBg: linear-gradient(270deg, #c5a768 0%, #a58645 100%);
+$baseClr: #1e2738;
+$whiteclr2: #f6f6f6;
+$lightText: #5f637a;
+$clr999999: #999999;
+$clrAFC5E5: #afc5e5;
+$clrD9D9D9: #d9d9d9;
+$clrF7F7F7: #f7f7f7;
+$clr373737: #373737;
+$clrF9F9FC: #f9f9fc;
