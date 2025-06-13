@@ -9,11 +9,12 @@ pipeline{
         IMAGE_TAG="latest"
         REPOSITORY_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
-    stages{
-        stage("Clone Github Repo"){
-        steps{
-            git branch: "${BRANCH}",url: "${GIT_REPO}"
-        }
+    stage('Clone Github Repo') {
+      steps {
+        git branch: "${BRANCH}", 
+        credentialsId: 'github-credentials', 
+        url: "${GIT_REPO}"
+      }
     }
     stage("Build Docker image"){
         steps{
